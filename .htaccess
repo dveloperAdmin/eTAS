@@ -1,0 +1,79 @@
+RewriteEngine on 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php
+# database back up
+RewriteRule ^backDb-Ui$ include/_db_backup.php [L]
+# index page 
+RewriteRule ^dashbord$ admin/index.php [L]
+# comapny page 
+RewriteRule ^company-Ui$ admin/company.php [L]
+# branch 
+RewriteRule ^branch-Ui$ admin/branch.php [L]
+# department
+RewriteRule ^department-Ui$ admin/department.php [L]
+# Sub-department
+RewriteRule ^subdepartment-Ui$ admin/subDepartment.php [L]
+# Designation
+RewriteRule ^designation-Ui$ admin/designation.php [L]
+# Sub-Designation
+RewriteRule ^subdesignation-Ui$ admin/subdesignation.php [L]
+# Division
+RewriteRule ^division-Ui$ admin/division.php [L]
+# Sub Division
+RewriteRule ^subdivision-Ui$ admin/subdivision.php [L]
+# emp. category
+RewriteRule ^emp.category-Ui$ admin/empCategory.php [L]
+# emp. subcategory
+RewriteRule ^emp.subcategory-Ui$ admin/empSubCategory.php [L]
+# emp. type
+RewriteRule ^emp.type-Ui$ admin/empType.php [L]
+# grade
+RewriteRule ^grade-Ui$ admin/grade.php [L]
+# location 
+RewriteRule ^location-Ui$ admin/location.php [L]
+# Team 
+RewriteRule ^team-Ui$ admin/teamDetails.php [L]
+# Shift 
+RewriteRule ^shift-Details$ admin/shiftDetails.php [L]
+# Users 
+RewriteRule ^user-Ui$ admin/user-Details.php [L]
+# Users Password Change
+RewriteRule ^changepassword-Ui$ admin/user-Pass-Change.php [L]
+# Users Details View
+RewriteRule ^user-View-Ui$ admin/user-Details-view.php [L]
+
+# import Employee 
+RewriteRule ^import-Employee-Ui$ admin/import-Employee.php [L]
+
+# Add Employee 
+RewriteRule ^add-Employee-Ui$ admin/newEmployeeAdd.php [L]
+# Employee List
+RewriteRule ^list-Employee-Ui$ admin/employeeList.php [L]
+
+# Attendenace Import 
+RewriteRule ^download-Attendance-Ui$ admin/downloadAttendanceFormate.php [L]
+# Attendenace Import 
+RewriteRule ^import-Attendance-Ui$ admin/importAttendance.php [L]
+# Attendenace Import 
+RewriteRule ^process-Attendance-Ui$ admin/random.php [L]
+
+
+# report section
+# attendance 
+RewriteRule ^report-Attendance-Ui$ admin/attendance_report.php [L]
+# Audit report
+RewriteRule ^report-Audit-Ui$ admin/audit_report.php [L]
+# Audit report
+RewriteRule ^report-Log-Ui$ admin/log-report.php [L]
+
+# report process page 
+RewriteRule ^process-Att-Ui$ admin/process/attendance-report-process.php [L]
+# report process page 
+RewriteRule ^process-Report-Ui$ admin/process/report-process.php [L]
+
+# license
+# about license 
+RewriteRule ^license-About-Ui$ admin/lic-about.php [L]
+# extend license 
+RewriteRule ^license-Extend-Ui$ admin/extended-license.php [L]

@@ -1,0 +1,19 @@
+
+  #center{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  #preloader{
+    margin: 0;
+    padding: 0;
+
+    background: rgb(6, 68, 107) url(../images/preloader.gif) no-repeat center;
+    background-size: 20%;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
