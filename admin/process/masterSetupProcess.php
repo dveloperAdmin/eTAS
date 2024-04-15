@@ -984,11 +984,11 @@ if(isset($_POST['shiftAdd'])){
     $checkinFrom = date("H:i:s",(strtotime($shiftChIn)-($shiftTimingDur * 60)));
     $checkinTo = date("H:i:s",(strtotime($shiftChIn)+($shiftTimingDur * 60)));
     // half day Checkout duration
-    $HcheckoutFrom = date("H:i:s",(strtotime($shiftHChOut)-($shiftTimingDur * 60)));
-    $HcheckoutTo = date("H:i:s",(strtotime($shiftHChOut)+($shiftTimingDur * 60)));
+    $HcheckoutFrom = date("H:i:s",(strtotime($shiftHChOut)));
+    $HcheckoutTo = date("H:i:s",(strtotime($shiftHChOut)+((2*$shiftTimingDur) * 60)));
     // Full day Checkout duration
-    $FcheckoutFrom = date("H:i:s",(strtotime($shiftFChOut)-($shiftTimingDur * 60)));
-    $FcheckoutTo = date("H:i:s",(strtotime($shiftFChOut)+($shiftTimingDur * 60)));
+    $FcheckoutFrom = date("H:i:s",(strtotime($shiftFChOut)));
+    $FcheckoutTo = date("H:i:s",(strtotime($shiftFChOut)+((2*$shiftTimingDur) * 60)));
     $checkNumRows = sql_num_rows($conn, "select * from shiftDetails where shiftStaus = 'Active'");
     if($checkNumRows<1){
       $activeStatus = "Active";
@@ -1041,11 +1041,11 @@ echo $shiftStatus;
     $checkinFrom = date("H:i:s",(strtotime($shiftChIn)-($shiftTimingDur * 60)));
     $checkinTo = date("H:i:s",(strtotime($shiftChIn)+($shiftTimingDur * 60)));
     // half day Checkout duration
-    $HcheckoutFrom = date("H:i:s",(strtotime($shiftHChOut)-($shiftTimingDur * 60)));
-    $HcheckoutTo = date("H:i:s",(strtotime($shiftHChOut)+($shiftTimingDur * 60)));
+    $HcheckoutFrom = date("H:i:s",(strtotime($shiftHChOut)));
+    $HcheckoutTo = date("H:i:s",(strtotime($shiftHChOut)+((2*$shiftTimingDur) * 60)));
     // Full day Checkout duration
-    $FcheckoutFrom = date("H:i:s",(strtotime($shiftFChOut)-($shiftTimingDur * 60)));
-    $FcheckoutTo = date("H:i:s",(strtotime($shiftFChOut)+($shiftTimingDur * 60)));
+    $FcheckoutFrom = date("H:i:s",(strtotime($shiftFChOut)));
+    $FcheckoutTo = date("H:i:s",(strtotime($shiftFChOut)+((2*$shiftTimingDur) * 60)));
 
     if($shiftStatus == 'Active'){
       $checkNumRows = sql_num_rows($conn, "select * from shiftDetails where shiftStaus = 'Active'");
