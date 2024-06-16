@@ -1,12 +1,12 @@
 <?php
-include '../include/_session.php'; 
+include '../include/_session.php';
 include '../include/_dbConnect.php';
-$des="load download-Attendance-Ui page";
-$rem="Attendance Format details page";
-$header="Attendance Format";
-$headerDes="Attendance Format";
+$des = "load download-Attendance-Ui page";
+$rem = "Attendance Format details page";
+$header = "Attendance Format";
+$headerDes = "Attendance Format";
 include '../include/_audiLog.php';
-include '../include/_licCheck.php';  
+include '../include/_licCheck.php';
 
 
 
@@ -18,21 +18,21 @@ include '../include/_licCheck.php';
 <html lang="en">
 
 <!-- head segment  -->
-<?php include 'include/_head.php';?>
+<?php include 'include/_head.php'; ?>
 
 <body>
   <!--start wrapper-->
   <div class="wrapper">
-    <?php 
-        // header & navbar 
-        include 'include/_headerSection.php';
+    <?php
+    // header & navbar 
+    include 'include/_headerSection.php';
 
-        // sidebar segment 
-        include 'include/_sideBar.php';
+    // sidebar segment 
+    include 'include/_sideBar.php';
     ?>
     <!--start content-->
     <main class="page-content">
-      <?php include 'include/_pageHeader.php' ; ?>
+      <?php include 'include/_pageHeader.php'; ?>
       <div class="card">
         <div class="row">
           <div class="col-xl-6 mx-auto">
@@ -51,11 +51,12 @@ include '../include/_licCheck.php';
                         <label class="form-label">Month </label>
                         <select name="monthFormat" id="" class="form-control" required>
                           <option style="color: #ced4da;" selected disabled hidden>Select Month</option>
-                          <?php for($i=1; $i<=12; $i++){?>
-                          <option value="<?php echo date("m", mktime(0, 0, 0, $i, 1, 2000));?>">
-                            <?php echo date("F", mktime(0, 0, 0, $i, 1, 2000));?></option>
+                          <?php for ($i = 1; $i <= 12; $i++) { ?>
+                          <option value="<?php echo date("m", mktime(0, 0, 0, $i, 1, 2000)); ?>">
+                            <?php echo date("F", mktime(0, 0, 0, $i, 1, 2000)); ?>
+                          </option>
 
-                          <?php }   ?>
+                          <?php } ?>
                         </select>
 
 
@@ -65,10 +66,10 @@ include '../include/_licCheck.php';
 
                         <select name="yearFormat" id="" class="form-control" required>
                           <option style="color: #ced4da;" selected disabled hidden>Select Year</option>
-                          <?php for($i=date("Y");$i>2020;$i--){ ?>
-                          <option value="<?php echo $i;?>"><?php echo $i;?></option>
+                          <?php for ($i = date("Y"); $i > 2020; $i--) { ?>
+                          <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
 
-                          <?php   } ?>
+                          <?php } ?>
                         </select>
                       </div>
                     </div>
@@ -105,9 +106,13 @@ include '../include/_licCheck.php';
                         style="padding-left:1rem;">
                         1. Employee Code mendetory</span><br><span style="padding-left:1rem;"> 2.
                         "P" for Present</span><br><span style="padding-left:1rem;"> 3. "HD" for Halfday</span><br><span
-                        style="padding-left:1rem;"> 4. "L" for Leave</span><br><span style="padding-left:1rem;"> 5."WO"
-                        for Week Off</span><br><span style="padding-left:1rem;"> 6. Mobile
-                        Number </span><br><span style="padding-left:1rem;"> 7. Employee Status . </span></span><br>
+                        style="padding-left:1rem;"> 4. "L" for Leave</span><br>
+                      <span style="padding-left:1rem;"> 5."WO"
+                        for Week Off</span><br>
+                      <span style="padding-left:1rem;"> 6."H"
+                        for Holiday</span><br>
+                      <span style="padding-left:1rem;"> 7. Mobile
+                        Number </span><br><span style="padding-left:1rem;"> 8. Employee Status . </span></span><br>
                   </div>
                 </div>
               </div>
@@ -123,7 +128,7 @@ include '../include/_licCheck.php';
 </body>
 
 <!-- footer segment  -->
-<?php include 'include/_footer_.php';?>
+<?php include 'include/_footer_.php'; ?>
 
 </html>
 <script>

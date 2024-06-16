@@ -260,6 +260,7 @@ function attendanceTable($processMonth, $processYear, $processSql, $conn, $comNa
       $L = 0;
       $WO = 0;
       $HD = 0;
+      $H = 0;
       $htmlTable .= '<tr>';
       $emp_code = $emp_data["empCode"];
       $htmlTable .= '<td style="padding: 8px;text-align: center; font-weight:600;" >' . $emp_code . '</td>';
@@ -331,6 +332,9 @@ function attendanceTable($processMonth, $processYear, $processSql, $conn, $comNa
                   ++$L;
                 } else if ($data == 'WO') {
                   ++$WO;
+
+                } else if ($data == 'H') {
+                  ++$H;
                 }
               } else {
                 $data = $out_time[0];
@@ -338,6 +342,8 @@ function attendanceTable($processMonth, $processYear, $processSql, $conn, $comNa
                   ++$L;
                 } else if ($data == 'WO') {
                   ++$WO;
+                } else if ($data == 'H') {
+                  ++$H;
                 }
               }
 
@@ -373,6 +379,7 @@ function attendanceTable($processMonth, $processYear, $processSql, $conn, $comNa
       $htmlTable .= '<td style="padding: 8px;text-align: center;font-weight: 900;font-size: 16px;"colspan="4">Half Day( HD ) :&nbsp;&nbsp;' . $HD . '</td>';
       $htmlTable .= '<td style="padding: 8px;text-align: center;font-weight: 900;font-size: 16px;"colspan="4">Leave ( L ) :&nbsp;&nbsp;' . $L . '</td>';
       $htmlTable .= '<td style="padding: 8px;text-align: center;font-weight: 900;font-size: 16px;"colspan="4">Week Off ( WO ) :&nbsp;&nbsp;' . $WO . '</td>';
+      $htmlTable .= '<td style="padding: 8px;text-align: center;font-weight: 900;font-size: 16px;"colspan="4">Holiday ( H ) :&nbsp;&nbsp;' . $H . '</td>';
       // $htmlTable .= str_repeat('<td style="padding: 8px;text-align: center;"></td>', cal_days_in_month(CAL_GREGORIAN, $processMonth, $processYear) - 2); // Adjust for remaining columns
       $htmlTable .= '</tr>';
     }
